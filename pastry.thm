@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<alloy>
+
+<view>
+
+<projection> <type name="Time"/> </projection>
+
+<defaultnode/>
+
+<defaultedge/>
+
+<node>
+   <type name="Int"/>
+   <type name="Node"/>
+   <type name="String"/>
+   <type name="Time"/>
+   <type name="univ"/>
+   <type name="I/Ord"/>
+   <type name="seq/Int"/>
+   <type name="T/Ord"/>
+   <set name="this/First" type="Id"/>
+   <set name="this/Last" type="Id"/>
+   <set name="$joinIsConsistent_n" type="Node"/>
+   <set name="$joinIsConsistent_t" type="Time"/>
+   <set name="First" type="T/Ord"/>
+   <set name="Next" type="T/Ord"/>
+</node>
+
+<node color="Yellow">
+   <type name="Id"/>
+   <type name="Key"/>
+</node>
+
+<node shape="Ellipse" color="Blue">
+   <type name="Network"/>
+</node>
+
+<node showlabel="no" color="Green">
+   <set name="$ConnectedNodes" type="Node"/>
+</node>
+
+<node showlabel="no" color="Red">
+   <set name="$DisconnectedNodes" type="Node"/>
+</node>
+
+<edge style="Solid">
+   <relation name="succ"> <type name="Id"/> <type name="Id"/> </relation>
+</edge>
+
+<edge visible="no" attribute="yes">
+   <relation name="ant"> <type name="Id"/> <type name="Id"/> </relation>
+   <relation name="connected"> <type name="Network"/> <type name="Node"/> </relation>
+   <relation name="hashtable"> <type name="Node"/> <type name="Key"/> </relation>
+   <relation name="lset"> <type name="Node"/> <type name="Node"/> </relation>
+   <relation name="neighboursHT"> <type name="Node"/> <type name="Key"/> </relation>
+   <relation name="rset"> <type name="Node"/> <type name="Node"/> </relation>
+</edge>
+
+</view>
+
+</alloy>
